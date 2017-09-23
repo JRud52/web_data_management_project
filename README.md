@@ -1,6 +1,6 @@
 # web_data_management_project
 
-Web Data Management Project
+Web Data Management Project - COSC 4806
 
 - [x] Assignment 1 (Basic login page)
 - [ ] Assignment 2
