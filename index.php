@@ -34,10 +34,10 @@
 
 <form action="#" method="post">
     <label><b>Username</b></label>
-    <input type="text" class="textbox" placeholder="Enter Username" name="username" required>
+    <input type="text" placeholder="Username" name="username" required>
 
     <label><b>Password</b></label>
-    <input type="password" class="textbox" placeholder="Enter Password" name="password" required>
+    <input type="password" placeholder="Password" name="password" required>
 
     <button type="submit">Login</button>
 </form> 
