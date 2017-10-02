@@ -1,49 +1,16 @@
-<!doctype html>
-  
-<style>
-    form {
-        border: 3px solid #f2f2f2;
-        max-width: 500px;
-        margin: auto;
-        padding: 16px;
+<?php 
+    session_start();
+
+    if (isset($_SESSION['authenticated'])) {
+        header('Location:welcome.php');
     }
 
-    input {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
+    if (!isset($_SESSION['login_attempts_count'])) {
+        $_SESSION['login_attempts_count'] = 0;
+        $_SESSION['login_attempts'] = array();
     }
 
-    button {
-        background-color: #2196F3;
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-    }
-
-    button:hover {
-        opacity: 0.8;
-    }
-</style>
-
-<form action="#" method="post">
-    <label><b>Username</b></label>
-    <input type="text" placeholder="Username" name="username" required>
-
-    <label><b>Password</b></label>
-    <input type="password" placeholder="Password" name="password" required>
-
-    <button type="submit">Login</button>
-</form> 
-
-<?php
-    if ($_POST) {
+    if (isset($_POST['login'])) {
         $passwords = array(
             "hello" => "world",
             "testing" => "123",
@@ -51,9 +18,52 @@
             );
 
         if (array_key_exists($_POST["username"], $passwords) && $_POST["password"] == $passwords[$_POST["username"]]){
-            echo "You are logged in as " . $_POST["username"] . "!";
+            $_SESSION['authenticated'] = true;
+            $_SESSION['username'] = $_POST['username'];
+            $_SESSION['password'] = $_POST['password'];
+            header('Location:welcome.php');
         } else {
-            echo "The information you provided is incorrect.";
+            echo "<h2>The information you provided is incorrect.</h2>";
+            $_SESSION['login_attempts_count'] += 1;
+            array_push($_SESSION['login_attempts'], array($_POST["username"], $_POST['password']));
         }
+    }
+?>
+
+<link rel="stylesheet" type="text/css" href="styles.css" />
+
+<!doctype html>
+<form action="index.php" method="post" class="top-form">
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Username" name="username" required>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Password" name="password" required>
+
+    <button type="submit" name="login">Login</button>
+</form> 
+
+<form action="index.php" method="post" class="bottom-form">
+        <button type="submit" name="report">Report</button>
+</form>
+
+<?php 
+    if (isset($_POST['report'])){
+        echo "<h2>There have been " . $_SESSION['login_attempts_count'] . " failed attempts to login.</h2>";
+
+        echo "  <table>
+                    <tr>
+                        <th>Username</th>
+                        <th>Password</th>
+                    </tr>";
+
+        for ($i = 0; $i < $_SESSION['login_attempts_count']; $i++){
+        echo "      <tr>
+                        <td>". $_SESSION['login_attempts'][$i][0] ."</td>
+                        <td>". $_SESSION['login_attempts'][$i][1] ."</td>
+                    </tr>";
+                
+        }
+        echo "</table>";
     }
 ?>
