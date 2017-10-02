@@ -6,6 +6,8 @@
 ?>
 
 <!doctype html>
+<link rel="stylesheet" type="text/css" href="styles.css" />
+
 <h1><?= "Welcome" ?></h1>
 <h1><?= "Your username is: ".$_SESSION['username'] ?></h1>
 <h1><?= "Your password is: ".$_SESSION['password'] ?></h1>
