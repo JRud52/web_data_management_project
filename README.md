@@ -1,9 +1,11 @@
 # web_data_management_project
 
+https://github.com/JRud52/web_data_management_project
+
 Web Data Management Project - COSC 4806
 
 - [x] Assignment 1 (Basic login page)
-- [ ] Assignment 2
+- [x] Assignment 2 (Session variables)
 - [ ] Assignment 3
 - [ ] Assignment 4
 - [ ] Assignment 5
