@@ -7,7 +7,7 @@ https://github.com/JRud52/web_data_management_project
 - [x] Assignment 1 (Basic login page)
 - [x] Assignment 2 (Session variables)
 - [x] Assignment 3 (MySQL database)
-- [ ] Assignment 4
+- [x] Assignment 4 (MVC)
 - [ ] Assignment 5
 - [ ] Assignment 6
 - [ ] Assignment 7
