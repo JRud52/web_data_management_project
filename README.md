@@ -8,7 +8,7 @@ https://github.com/JRud52/web_data_management_project
 - [x] Assignment 2 (Session variables)
 - [x] Assignment 3 (MySQL database)
 - [x] Assignment 4 (MVC)
-- [ ] Assignment 5
+- [x] Assignment 5 (Logging and lockout)
 - [ ] Assignment 6
 - [ ] Assignment 7
 - [ ] Assignment 8
