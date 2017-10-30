@@ -10,12 +10,7 @@ class User {
         
     }
 
-    public function authenticate() {
-        /*
-         * if username and password good then
-         * $this->auth = true;
-         */
-		 
+    public function authenticate($address) {
 		$db = db_connect();
         $statement = $db->prepare("SELECT username, password_hash FROM users
                                 WHERE username=:username;");
@@ -23,13 +18,20 @@ class User {
         $statement->execute();
         $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+        $success = false;
 		if ($rows) {
             if (password_verify($this->password, $rows[0]['password_hash'])){
                 $this->auth = true;
+                $_SESSION['username'] = $rows[0]['username'];
+                $success = true;
             }
-			
-			$_SESSION['username'] = $rows[0]['username'];
 		}
+
+        $statement = $db->prepare("INSERT INTO activity_logs (username, is_login, address, success) VALUES (:username, true, :address, :success);");
+        $statement->bindValue(':username', $this->username);
+        $statement->bindValue(':address', $address);
+        $statement->bindValue(':success', $success);
+        $statement->execute();
     }
 	
 	public function register ($username, $password) {
@@ -40,7 +42,7 @@ class User {
         $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
 
         if ($rows) {
-            $_SESSION['register_complete'] = false;
+            return false;
         }
         else {
             $statement = $db->prepare("INSERT INTO users (username, password_hash)"
@@ -49,8 +51,15 @@ class User {
             $statement->bindValue(':username', $username);
             $statement->bindValue(':password_hash', $password);
             $statement->execute();
-            $_SESSION['register_complete'] = true;
             $_SESSION['username'] = $username;
         }
 	}
+
+    public function logout ($address, $username) {
+        $db = db_connect();
+        $statement = $db->prepare("INSERT INTO activity_logs (username, is_login, address, success) VALUES (:username, false, :address, true);");
+        $statement->bindValue(':username', $username);
+        $statement->bindValue(':address', $address);
+        $statement->execute();
+    }
 }
