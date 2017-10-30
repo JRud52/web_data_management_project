@@ -1,18 +1,24 @@
 <?php require_once '../app/views/templates/header.php' ?>
-<div>
-    <h2>There have been <?=$_SESSION['login_attempts_count']?> failed attempts to login.</h2>
+<div class='container'>
+    <h2>Activity Logs</h2>
 
     <table class='table table-striped table-condensed'>
                 <tr>
+                    <th>Date</th>
                     <th>Username</th>
-                    <th>Password</th>
+                    <th>Login</th>
+                    <th>Address</th>
+                    <th>Success</th>
                 </tr>
 
-    <?php for ($i = 0; $i < $_SESSION['login_attempts_count']; $i++){
-        echo "<tr>
-            <td>".$_SESSION['login_attempts'][$i][0]."</td>
-            <td>".$_SESSION['login_attempts'][$i][1]."</td>
-        </tr>";
-    }?>
+    <?php foreach ($data['logs'] as $log){?>
+        <tr>
+            <td><?=$log['date_time']?></td>
+            <td><?=$log['username']?></td>
+            <td><?=$log['is_login']?></td>
+            <td><?=$log['address']?></td>
+            <td><?=$log['success']?></td>
+        </tr>
+    <?php } ?>
     </table>
 </div>
