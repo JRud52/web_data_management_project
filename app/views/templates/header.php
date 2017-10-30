@@ -23,7 +23,7 @@ if (isset($_SESSION['auth']) != 1) {
                 </div>
 
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/logout"><span class="fa fa-sign-in"></span> Logout</a></li>
+                    <li><a href="/logout/logout"><span class="fa fa-sign-in"></span> Logout</a></li>
                 </ul>
             </div>
         </nav>

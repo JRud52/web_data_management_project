@@ -9,6 +9,10 @@
 			</div>
     </div>
 
+	<?php if (isset($data['message'])) {?>
+		<div class="alert alert-danger"><?=$data['message']?></div>
+	<?php } ?>
+
     <div class="row">
 			<div class="col-lg-12">
 				<form class="form-horizontal" action="/login/index" method="post">
