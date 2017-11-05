@@ -13,6 +13,7 @@
         <div class="col-lg-12">
             <p> <?=$data['message']?> </p>
             <a href="/reports/login_report" class="btn btn-primary">Show Reports</a>
+            <a href="/reminder/reminder_list" class="btn btn-primary">Show Reminders</a>
         </div>
     </div>
 

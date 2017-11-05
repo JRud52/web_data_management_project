@@ -12,6 +12,7 @@ class Login extends Controller {
 
         if (isset($_POST['username'])) {
             $user->username = $_POST['username'];
+            $_SESSION['username'] = $_POST['username'];
         }
 
         if (isset($_POST['password'])) {
@@ -26,7 +27,6 @@ class Login extends Controller {
             }
             else {
                 $_SESSION['login_attempts_count'] += 1;
-                array_push($_SESSION['login_attempts'], array($_POST["username"], $_POST['password']));
                 $message = 'The information provided was incorrect.';
             }
         } else {
