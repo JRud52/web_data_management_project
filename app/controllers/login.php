@@ -4,6 +4,7 @@ class Login extends Controller {
     public function index() {
         $user = $this->model('User');
         $lockout = $this->model('Lockout');
+        $logs = $this->model('Logs');
 
         if (!isset($_SESSION['login_attempts_count'])) {
             $_SESSION['login_attempts_count'] = 0;
@@ -12,7 +13,6 @@ class Login extends Controller {
 
         if (isset($_POST['username'])) {
             $user->username = $_POST['username'];
-            $_SESSION['username'] = $_POST['username'];
         }
 
         if (isset($_POST['password'])) {
@@ -24,6 +24,8 @@ class Login extends Controller {
 
             if ($user->auth == TRUE) {
                 $_SESSION['auth'] = true;
+                $_SESSION['username'] = $_POST['username'];
+                $_SESSION['login_date'] = $logs->get_last_login($_POST['username']);
             }
             else {
                 $_SESSION['login_attempts_count'] += 1;
@@ -37,8 +39,10 @@ class Login extends Controller {
             $lockout->lockout($_SERVER['REMOTE_ADDR']);
             $_SESSION['login_attempts_count'] = 0;
         }
+
+        $count = $logs->get_login_count($_SERVER['REMOTE_ADDR']);
         
-        $this->view('home/login', ['message' => $message]);
+        $this->view('home/login', ['message' => $message, 'count' => $count]);
     }
 	
 	public function register () {

@@ -9,7 +9,11 @@ class Home extends Controller {
     }
 
     public function login($name = '') {
-        $this->view('home/login');
+        $logs = $this->model('Logs');
+
+        $count = $logs->get_login_count($_SERVER['REMOTE_ADDR']);
+
+        $this->view('home/login', ['count' => $count]);
     }
 
 }
