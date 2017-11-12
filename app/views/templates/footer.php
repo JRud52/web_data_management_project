@@ -1,7 +1,11 @@
 <footer class="footer">    
     <div class="row">
         <div class="col-lg-12">
-            <p>Copyright &copy; <?php echo date('Y'); ?> </p>
+            <p>Copyright &copy; <?php echo date('Y'); ?>
+            <?php if (isset($_SESSION['login_date'][1])) { ?>
+                | Last login: <?=$_SESSION['login_date'][1]['date_time']?>
+            <?php } ?>
+            </p>
         </div>
     </div>
 </footer>

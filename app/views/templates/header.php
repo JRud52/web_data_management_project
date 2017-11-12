@@ -16,14 +16,26 @@ if (isset($_SESSION['auth']) != 1) {
         <meta name="mobile-web-app-capable" content="yes">
     </head>
     <body>
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/home">COSC</a>
-                </div>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+            <a class="navbar-brand" href="/home">COSC</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="/reports/login_report" class="nav-link">Show Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/reminder/reminder_list" class="nav-link">Show Reminders</a>
+                    </li>
+                </ul>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/logout/logout"><span class="fa fa-sign-in"></span> Logout</a></li>
+                <ul class="navbar-nav navbar-right">
+                    <li class="nav-item">
+                        <a href="/logout/logout" class="nav-link">
+                        <span class="fa fa-sign-out"></span> Logout</a>
+                        </li>
                 </ul>
             </div>
         </nav>

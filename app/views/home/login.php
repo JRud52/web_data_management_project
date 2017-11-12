@@ -32,7 +32,6 @@
 					<div class="form-group">
 						<div class="col-lg-10 col-lg-offset-2">
 						<button type="submit" class="btn btn-primary">Submit</button>
-						<a href="/login/register" class="btn btn-primary"> Sign up here </a>
 						</div>
 					</div>
 					</fieldset>
@@ -40,4 +39,4 @@
 			</div>
     </div>
 
-    <?php require_once '../app/views/templates/footer.php' ?>
+    <?php require_once '../app/views/templates/footerPublic.php' ?>
