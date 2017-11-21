@@ -1,7 +1,7 @@
 <?php
 if (isset($_SESSION['auth']) != 1) {
     header('Location: /home');
-}
+} 
 ?>
 
 <!DOCTYPE html>
@@ -23,11 +23,19 @@ if (isset($_SESSION['auth']) != 1) {
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
+                    <?php if ($_SESSION['acl'] == 3) { ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">
+                            Reports
+                            </a>
+                            <div class="dropdown-menu bg-primary">
+                                <a class="dropdown-item nav-link bg-primary" href="/reports/login_report">Login Reports</a>
+                                <a class="dropdown-item nav-link bg-primary" href="/reports/user_report">User Reports</a>
+                            </div>
+                        </li>
+                    <?php } ?>
                     <li class="nav-item">
-                        <a href="/reports/login_report" class="nav-link">Show Reports</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/reminder/reminder_list" class="nav-link">Show Reminders</a>
+                        <a href="/reminder/reminder_list" class="nav-link">Reminders</a>
                     </li>
                 </ul>
 

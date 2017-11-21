@@ -12,7 +12,7 @@ class User {
 
     public function authenticate($address) {
 		$db = db_connect();
-        $statement = $db->prepare("SELECT username, password_hash FROM users
+        $statement = $db->prepare("SELECT username, password_hash, acl FROM users
                                 WHERE username=:username;");
         $statement->bindValue(':username', $this->username);
         $statement->execute();
@@ -23,6 +23,7 @@ class User {
             if (password_verify($this->password, $rows[0]['password_hash'])){
                 $this->auth = true;
                 $_SESSION['username'] = $rows[0]['username'];
+                $_SESSION['acl'] = $rows[0]['acl'];
                 $success = true;
             }
 		}
@@ -61,5 +62,14 @@ class User {
         $statement->bindValue(':username', $username);
         $statement->bindValue(':address', $address);
         $statement->execute();
+    }
+
+    public function get_all_users() {
+		$db = db_connect();
+        $statement = $db->prepare("SELECT * FROM users;");
+        $statement->execute();
+        $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        return $rows;
     }
 }
