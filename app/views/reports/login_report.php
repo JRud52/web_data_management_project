@@ -1,4 +1,11 @@
 <?php require_once '../app/views/templates/header.php' ?>
+
+<?php
+if ($_SESSION['acl'] != 3) {
+    header('Location: /index');
+}
+?>
+
 <div class='container'>
     <h2>Activity Logs</h2>
 
