@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 05, 2017 at 07:11 PM
+-- Generation Time: Nov 28, 2017 at 07:34 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -202,7 +202,80 @@ INSERT INTO `activity_logs` (`date_time`, `username`, `is_login`, `address`, `su
 ('2017-11-05 17:38:37', 'testing', 1, '127.0.0.1', 1),
 ('2017-11-05 17:38:55', 'testing', 0, '127.0.0.1', 1),
 ('2017-11-05 17:39:38', 'hello', 1, '127.0.0.1', 1),
-('2017-11-05 18:06:33', 'hello', 0, '127.0.0.1', 1);
+('2017-11-05 18:06:33', 'hello', 0, '127.0.0.1', 1),
+('2017-11-12 04:13:29', 'hello', 1, '::1', 1),
+('2017-11-12 04:14:08', 'hello', 0, '::1', 1),
+('2017-11-12 19:06:43', 'hello', 1, '::1', 1),
+('2017-11-12 19:29:33', 'hello', 0, '::1', 1),
+('2017-11-12 19:34:41', 'hello', 1, '::1', 1),
+('2017-11-12 19:59:53', 'hello', 0, '::1', 1),
+('2017-11-12 20:29:52', 'hello', 1, '::1', 1),
+('2017-11-12 20:29:59', 'hello', 0, '::1', 1),
+('2017-11-12 20:33:33', 'hello', 1, '::1', 1),
+('2017-11-12 20:33:49', 'hello', 0, '::1', 1),
+('2017-11-12 20:38:41', 'adsfa', 1, '::1', 0),
+('2017-11-12 20:42:54', 'adsfads', 1, '::1', 0),
+('2017-11-12 20:43:30', 'adsfads', 1, '::1', 0),
+('2017-11-12 20:43:34', 'adsfads', 1, '::1', 0),
+('2017-11-12 20:43:35', 'adsfads', 1, '::1', 0),
+('2017-11-12 20:43:36', 'adsfads', 1, '::1', 0),
+('2017-11-12 20:43:38', 'adsfads', 1, '::1', 0),
+('2017-11-12 20:43:48', 'adsfads', 1, '::1', 0),
+('2017-11-12 20:43:49', 'adsfads', 1, '::1', 0),
+('2017-11-12 20:43:53', 'asdfadsfa', 1, '::1', 0),
+('2017-11-12 20:43:56', 'asdfad', 1, '::1', 0),
+('2017-11-12 20:43:58', 'asdfads', 1, '::1', 0),
+('2017-11-12 20:44:00', 'asdfadsfa', 1, '::1', 0),
+('2017-11-12 20:44:09', 'asdf', 1, '::1', 0),
+('2017-11-12 20:44:13', 'asdfa', 1, '::1', 0),
+('2017-11-12 20:44:16', 'asdfasdf', 1, '::1', 0),
+('2017-11-12 20:44:19', 'asdfadsfa', 1, '::1', 0),
+('2017-11-12 20:51:38', 'hello', 1, '::1', 1),
+('2017-11-12 20:53:01', 'hello', 0, '::1', 1),
+('2017-11-12 20:53:06', 'hello', 1, '::1', 1),
+('2017-11-12 20:54:15', 'hello', 0, '::1', 1),
+('2017-11-12 20:54:18', 'hello', 1, '::1', 1),
+('2017-11-12 20:59:30', 'hello', 0, '::1', 1),
+('2017-11-12 20:59:36', 'hello', 1, '::1', 1),
+('2017-11-12 21:04:30', 'hello', 0, '::1', 1),
+('2017-11-12 21:04:31', 'hello', 0, '::1', 1),
+('2017-11-12 21:04:37', 'hello', 1, '::1', 1),
+('2017-11-12 21:08:16', 'hello', 0, '::1', 1),
+('2017-11-12 21:08:20', 'hello', 1, '::1', 1),
+('2017-11-12 21:09:36', 'hello', 0, '::1', 1),
+('2017-11-12 21:09:39', 'hello', 1, '::1', 1),
+('2017-11-12 21:10:13', 'hello', 0, '::1', 1),
+('2017-11-12 21:10:16', 'hello', 1, '::1', 1),
+('2017-11-12 21:10:28', 'hello', 0, '::1', 1),
+('2017-11-19 16:43:10', 'hello', 1, '127.0.0.1', 1),
+('2017-11-19 16:56:29', 'hello', 0, '127.0.0.1', 1),
+('2017-11-19 16:56:34', 'hello', 1, '127.0.0.1', 1),
+('2017-11-19 16:56:38', 'hello', 0, '127.0.0.1', 1),
+('2017-11-19 16:56:39', 'hello', 0, '127.0.0.1', 1),
+('2017-11-19 16:56:44', 'testing', 1, '127.0.0.1', 1),
+('2017-11-19 16:56:48', 'testing', 0, '127.0.0.1', 1),
+('2017-11-19 16:56:49', 'testing', 0, '127.0.0.1', 1),
+('2017-11-19 16:56:52', 'hello', 1, '127.0.0.1', 1),
+('2017-11-19 16:57:06', 'hello', 0, '127.0.0.1', 1),
+('2017-11-19 16:57:10', 'testing', 1, '127.0.0.1', 1),
+('2017-11-19 16:57:26', 'testing', 0, '127.0.0.1', 1),
+('2017-11-19 16:57:43', 'hello', 1, '127.0.0.1', 1),
+('2017-11-19 16:57:50', 'hello', 0, '127.0.0.1', 1),
+('2017-11-19 16:57:54', 'testing', 1, '127.0.0.1', 1),
+('2017-11-19 16:58:10', 'testing', 0, '127.0.0.1', 1),
+('2017-11-19 16:59:30', 'testing', 1, '127.0.0.1', 1),
+('2017-11-19 17:01:03', 'hello', 1, '::1', 1),
+('2017-11-19 17:01:08', 'hello', 0, '::1', 1),
+('2017-11-19 17:01:11', 'testing', 1, '::1', 0),
+('2017-11-19 17:01:15', 'testing', 1, '::1', 1),
+('2017-11-19 17:02:55', 'testing', 0, '::1', 1),
+('2017-11-19 17:02:59', 'hello', 1, '::1', 1),
+('2017-11-19 17:03:01', 'hello', 0, '::1', 1),
+('2017-11-19 17:03:05', 'testing', 1, '::1', 1),
+('2017-11-19 17:06:06', 'testing', 0, '::1', 1),
+('2017-11-19 17:06:40', 'testing', 0, '127.0.0.1', 1),
+('2017-11-19 17:06:53', 'hello', 1, '127.0.0.1', 1),
+('2017-11-28 06:09:43', 'hello', 1, '127.0.0.1', 1);
 
 -- --------------------------------------------------------
 
@@ -258,7 +331,29 @@ INSERT INTO `lockout_times` (`date_time`, `address`) VALUES
 ('2017-10-30 17:12:33', '127.0.0.1'),
 ('2017-10-30 17:25:28', '127.0.0.1'),
 ('2017-10-30 17:26:03', '127.0.0.1'),
-('2017-11-01 01:02:36', '127.0.0.1');
+('2017-11-01 01:02:36', '127.0.0.1'),
+('2017-11-12 20:43:31', '::1'),
+('2017-11-12 20:43:36', '::1'),
+('2017-11-12 20:43:48', '::1'),
+('2017-11-12 20:43:49', '::1'),
+('2017-11-12 20:43:49', '::1'),
+('2017-11-12 20:43:58', '::1'),
+('2017-11-12 20:44:13', '::1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `personal_details`
+--
+
+CREATE TABLE `personal_details` (
+  `username` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `birthdate` date NOT NULL,
+  `phone_number` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `first_name` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `last_name` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(256) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -293,26 +388,27 @@ INSERT INTO `reminders` (`id`, `subject`, `description`, `created`, `username`, 
 
 CREATE TABLE `users` (
   `username` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
-  `password_hash` varchar(128) COLLATE utf8_unicode_ci NOT NULL
+  `password_hash` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `acl` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`username`, `password_hash`) VALUES
-('12345HelloWorld!@#', '$2y$10$eu9t.WrF.OnF5X.0glDISetp30zRVm6HUwz5MN9hvWHovhutHPvAi'),
-('asdfadsfa', '$2y$10$de3cCu0qVZ.9AloEGnFcO.I/IaBwDkrRR1umB4KyQCB.S2x4uUvEG'),
-('atari', '$2y$10$zi4lTYW.CPho7ZXLalKoOuzrECRgL/7rGyuQTej70SvGA2AG1CCPG'),
-('hello', '$2y$10$QGlngYufoJsIlReWTPSkOOO.QihQwRFwkSXZihe5zjlLqZ1t0Tuw2'),
-('name', '$2y$10$VNn9cRy5khTRD69035/.5eMSCqpu3SFv74B8HGlEqriV/pR0qvmNu'),
-('new_user', '$2y$10$EfFHS9ssZ.gN8JxOGml2Cea9NsJiVqRXgJQkt8tdMJhONFjquK8z6'),
-('new_user2', '$2y$10$PpKFc83c5NIpq.wT.aJskuONPcFJvL8U0YllyOF2hpQ1IAUlAWrW2'),
-('new_user3', '$2y$10$60uAxhI5DRQLqVxfoMKz8.f0PgiSEIRfYnJtd2yxFYebuSpUoES8S'),
-('pass_check_test', '$2y$10$LVP88mwHgS0MFjaeRbtrvuYQ0DJMioeuKd0doykupG2QxON.NtWeW'),
-('some', '$2y$10$tZu/.8M42VPhZwpOxcRhsu9k/KvzlMxaZaD44vcfbda8xZzGJ5F5K'),
-('test', '$2y$10$FV46AFM4dF8Xy33VntfTn.NOQ0Da2BBr0UWHPRZKEF0XdLe6saB3y'),
-('testing', '$2y$10$wQ6GAewf4HK9ea4QyN6B9.z.CQlxjQdwZQMSiHcMjixXBr11GT7AW');
+INSERT INTO `users` (`username`, `password_hash`, `acl`) VALUES
+('12345HelloWorld!@#', '$2y$10$eu9t.WrF.OnF5X.0glDISetp30zRVm6HUwz5MN9hvWHovhutHPvAi', 1),
+('asdfadsfa', '$2y$10$de3cCu0qVZ.9AloEGnFcO.I/IaBwDkrRR1umB4KyQCB.S2x4uUvEG', 1),
+('atari', '$2y$10$zi4lTYW.CPho7ZXLalKoOuzrECRgL/7rGyuQTej70SvGA2AG1CCPG', 1),
+('hello', '$2y$10$QGlngYufoJsIlReWTPSkOOO.QihQwRFwkSXZihe5zjlLqZ1t0Tuw2', 3),
+('name', '$2y$10$VNn9cRy5khTRD69035/.5eMSCqpu3SFv74B8HGlEqriV/pR0qvmNu', 1),
+('new_user', '$2y$10$EfFHS9ssZ.gN8JxOGml2Cea9NsJiVqRXgJQkt8tdMJhONFjquK8z6', 1),
+('new_user2', '$2y$10$PpKFc83c5NIpq.wT.aJskuONPcFJvL8U0YllyOF2hpQ1IAUlAWrW2', 1),
+('new_user3', '$2y$10$60uAxhI5DRQLqVxfoMKz8.f0PgiSEIRfYnJtd2yxFYebuSpUoES8S', 1),
+('pass_check_test', '$2y$10$LVP88mwHgS0MFjaeRbtrvuYQ0DJMioeuKd0doykupG2QxON.NtWeW', 1),
+('some', '$2y$10$tZu/.8M42VPhZwpOxcRhsu9k/KvzlMxaZaD44vcfbda8xZzGJ5F5K', 1),
+('test', '$2y$10$FV46AFM4dF8Xy33VntfTn.NOQ0Da2BBr0UWHPRZKEF0XdLe6saB3y', 1),
+('testing', '$2y$10$wQ6GAewf4HK9ea4QyN6B9.z.CQlxjQdwZQMSiHcMjixXBr11GT7AW', 2);
 
 --
 -- Indexes for dumped tables
@@ -323,6 +419,12 @@ INSERT INTO `users` (`username`, `password_hash`) VALUES
 --
 ALTER TABLE `activity_logs`
   ADD PRIMARY KEY (`date_time`);
+
+--
+-- Indexes for table `personal_details`
+--
+ALTER TABLE `personal_details`
+  ADD PRIMARY KEY (`username`);
 
 --
 -- Indexes for table `reminders`

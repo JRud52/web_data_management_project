@@ -16,6 +16,6 @@ Password: World
 - [x] Assignment 5 (Logging and lockout)
 - [x] Assignment 6 (Reminder CRUD)
 - [x] Assignment 7 (Public and private headers)
-- [ ] Assignment 8
-- [ ] Assignment 9
+- [x] Assignment 8 (ACLs)
+- [x] Assignment 9 (Public Profile)
 - [ ] Assignment 10
