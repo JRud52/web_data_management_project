@@ -72,4 +72,14 @@ class User {
 
         return $rows;
     }
+    
+    public function get_all_details() {
+		$db = db_connect();
+        $statement = $db->prepare("SELECT users.username, personal_details.first_name, personal_details.last_name, personal_details.email, personal_details.birthdate, personal_details.phone_number, COUNT(reminders.id) as reminder_count FROM users, personal_details, reminders WHERE users.username=personal_details.username AND users.username=reminders.username GROUP BY users.username;");
+        $statement->execute();
+        $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        return $rows;
+    }
+
 }

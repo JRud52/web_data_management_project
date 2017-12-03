@@ -31,6 +31,7 @@ if (isset($_SESSION['auth']) != 1) {
                             <div class="dropdown-menu bg-primary">
                                 <a class="dropdown-item nav-link bg-primary" href="/reports/login_report">Login Reports</a>
                                 <a class="dropdown-item nav-link bg-primary" href="/reports/user_report">User Reports</a>
+                                <a class="dropdown-item nav-link bg-primary" href="/reports/join_report">Join Reports</a>
                             </div>
                         </li>
                     <?php } ?>
