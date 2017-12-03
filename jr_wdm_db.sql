@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 28, 2017 at 07:34 AM
+-- Generation Time: Dec 03, 2017 at 10:33 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -275,7 +275,10 @@ INSERT INTO `activity_logs` (`date_time`, `username`, `is_login`, `address`, `su
 ('2017-11-19 17:06:06', 'testing', 0, '::1', 1),
 ('2017-11-19 17:06:40', 'testing', 0, '127.0.0.1', 1),
 ('2017-11-19 17:06:53', 'hello', 1, '127.0.0.1', 1),
-('2017-11-28 06:09:43', 'hello', 1, '127.0.0.1', 1);
+('2017-11-28 06:09:43', 'hello', 1, '127.0.0.1', 1),
+('2017-11-30 00:47:34', 'hello', 1, '127.0.0.1', 1),
+('2017-12-02 21:34:41', 'hello', 1, '127.0.0.1', 1),
+('2017-12-03 19:51:48', 'hello', 1, '127.0.0.1', 1);
 
 -- --------------------------------------------------------
 
@@ -354,6 +357,14 @@ CREATE TABLE `personal_details` (
   `last_name` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(256) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `personal_details`
+--
+
+INSERT INTO `personal_details` (`username`, `birthdate`, `phone_number`, `first_name`, `last_name`, `email`) VALUES
+('hello', '2017-12-12', '7322374859', 'hello', 'world', 'hello@world.com'),
+('testing', '2017-12-16', '4749585748', 'Some', 'Guy', 'some@guy.com');
 
 -- --------------------------------------------------------
 
