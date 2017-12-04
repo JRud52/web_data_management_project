@@ -20,12 +20,4 @@ if (isset($_SESSION['auth']) == 1) {
     <body>
         <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
             <a class="navbar-brand" href="/home">COSC</a>
-            <ul class="navbar-nav mr-auto">
-            </ul>
-            <ul class="navbar-nav navbar-right">
-                <li class="nav-item">
-                    <a href="/login/register" class="nav-link">Register</a>
-                </li>
-            </ul>
-            </div>
         </nav>

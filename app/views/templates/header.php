@@ -7,6 +7,8 @@ if (isset($_SESSION['auth']) != 1) {
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!-- j-query must be loaded before using it. -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link href= "/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link rel="icon" href="/favicon.png">
         <title>COSC 4806</title>
@@ -52,7 +54,7 @@ if (isset($_SESSION['auth']) != 1) {
                             Staff
                             </a>
                             <div class="dropdown-menu bg-primary">
-                                <a class="dropdown-item nav-link bg-primary" href="/reports/staff_report">Add Client</a>
+                                <a class="dropdown-item nav-link bg-primary" href="/profile/add_client">Add Client</a>
                             </div>
                         </li>
                     <?php } ?>
