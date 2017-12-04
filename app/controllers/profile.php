@@ -16,7 +16,7 @@ class Profile extends Controller {
     public function get_cities() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $province_model = $this->model('Province');
-            return $province_model->get_cities($_POST['province']);
+            return json_encode($province_model->get_cities($_POST['province']));
         }
     }
 }

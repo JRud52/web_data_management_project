@@ -29,9 +29,9 @@
 						<input type="text" class="form-control" name="birthdate" placeholder="Birthdate" required>
 					  </div>
 
-                      <label for="birthdate" class="col-lg-2 control-label">Email</label>
+                      <label for="email" class="col-lg-2 control-label">Email (algomau.ca)</label>
 					  <div class="col-lg-10">
-						<input type="text" class="form-control" name="birthdate" placeholder="Birthdate" required>
+						<input type="email" class="form-control" name="email" placeholder="Email" onChange='validateEmail(this.value);' id='email-field' required>
 					  </div>
 
                       <label for="birthdate" class="col-lg-2 control-label">Phone Number</label>
@@ -75,13 +75,14 @@
 
 		<script>
 			$(document).on("change", '#province', function(e) {
-                var province = this.value;
+                var province_value = this.value;
                 
                 $.ajax({
                     type: "POST",
-                    data: {province: province},
+                    data: {province: province_value},
                     url: '/profile/get_cities',
                     dataType: 'json',
+                    contentType: "application/json; charset=utf-8",
                     success: function(json) {
 
                         console.log('asdfadsfasfda');
@@ -96,8 +97,9 @@
                         });	
                     }
                 });
-    
             });
 		</script>
 
     <?php require_once '../app/views/templates/footer.php' ?>
+
+    <script src='/js/email_validation.js'></script>
