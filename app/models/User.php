@@ -82,4 +82,13 @@ class User {
         return $rows;
     }
 
+    public function get_phone_details() {
+		$db = db_connect();
+        $statement = $db->prepare("SELECT first_name, last_name, phone_number FROM personal_details;");
+        $statement->execute();
+        $rows = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+        return $rows;
+    }
+
 }

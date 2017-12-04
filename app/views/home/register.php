@@ -1,9 +1,10 @@
-<?php require_once '../app/views/templates/headerPublic.php' ?>
+<?php require_once '../app/views/templates/header.php' ?>
+
 <div class="container">
     <div class="page-header" id="banner">
         <div class="row">
             <div class="col-lg-12">
-                <h1>Please create an account</h1>
+                <h1>Create a User</h1>
                 <p class="lead"> <?= date("F jS, Y"); ?></p>
             </div>
         </div>
@@ -14,20 +15,26 @@
 		<?php } ?>
 
     <div class="row">
-        <div class="col-lg-12">
-            <form class="form-horizontal" action="/login/register" method="post">
+      <div class="col-lg-12">
+        <form class="form-horizontal" action="/login/register" method="post">
 			    <fieldset>
 					<div class="form-group">
 					  <label for="username" class="col-lg-2 control-label">New Username</label>
 					  <div class="col-lg-10">
 						<input type="text" class="form-control" name="username" placeholder="Username" required>
 					  </div>
-					</div>
-					<div class="form-group">
+
 					  <label for="password" class="col-lg-2 control-label">New Password</label>
 					  <div class="col-lg-10">
 						<input type="password" class="form-control" name="password" placeholder="Password" required>
 					  </div>
+
+						<label for="type" class="col-lg-2 control-label">Staff Type</label>
+					  <select class="form-control" id="type">
+							<option>Staff</option>
+							<option>Manager</option>
+							<option>Admin</option>
+						</select>
 					</div>
 					<div class="form-group">
 					  <div class="col-lg-10 col-lg-offset-2">
@@ -35,8 +42,8 @@
 					  </div>
 					</div>
 			    </fieldset>
-			</form>
-        </div>
+				</form>
+      </div>
     </div>
 
-    <?php require_once '../app/views/templates/footerPublic.php' ?>
+    <?php require_once '../app/views/templates/footer.php' ?>

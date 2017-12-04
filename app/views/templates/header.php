@@ -26,17 +26,41 @@ if (isset($_SESSION['auth']) != 1) {
                     <?php if ($_SESSION['acl'] == 3) { ?>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">
-                            Reports
+                            Admin
                             </a>
                             <div class="dropdown-menu bg-primary">
-                                <a class="dropdown-item nav-link bg-primary" href="/reports/login_report">Login Reports</a>
-                                <a class="dropdown-item nav-link bg-primary" href="/reports/user_report">User Reports</a>
-                                <a class="dropdown-item nav-link bg-primary" href="/reports/join_report">Join Reports</a>
+                                <a class="dropdown-item nav-link bg-primary" href="/reports/login_report">Login Report</a>
+                                <a class="dropdown-item nav-link bg-primary" href="/reports/user_report">User Report</a>
+                                <a class="dropdown-item nav-link bg-primary" href="/reports/join_report">Join Report</a>
+                                <a class="dropdown-item nav-link bg-primary" href="/login/register">Add User</a>
+                            </div>
+                        </li>
+                    <?php } ?>
+                    <?php if ($_SESSION['acl'] >= 2) { ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">
+                            Manager
+                            </a>
+                            <div class="dropdown-menu bg-primary">
+                                <a class="dropdown-item nav-link bg-primary" href="/reports/staff_report">Staff Report</a>
+                            </div>
+                        </li>
+                    <?php } ?>
+                    <?php if ($_SESSION['acl'] >= 1) { ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">
+                            Staff
+                            </a>
+                            <div class="dropdown-menu bg-primary">
+                                <a class="dropdown-item nav-link bg-primary" href="/reports/staff_report">Add Client</a>
                             </div>
                         </li>
                     <?php } ?>
                     <li class="nav-item">
                         <a href="/reminder/reminder_list" class="nav-link">Reminders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/profile/phone_list" class="nav-link">Phone List</a>
                     </li>
                 </ul>
 
