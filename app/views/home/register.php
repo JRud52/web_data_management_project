@@ -13,6 +13,9 @@
 		<?php if (isset($data['message'])) {?>
 				<div class="alert alert-danger"><?=$data['message']?></div>
 		<?php } ?>
+		<?php if (isset($data['success'])) {?>
+				<div class="alert alert-success"><?=$data['success']?></div>
+		<?php } ?>
 
     <div class="row">
       <div class="col-lg-12">

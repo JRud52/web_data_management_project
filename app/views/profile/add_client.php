@@ -16,16 +16,21 @@
         <?php if (isset($data['success'])) {?>
 				<div class="alert alert-success"><?=$data['success']?></div>
 		<?php } ?>
+        <?php if (isset($data['exists'])) {?>
+				<div class="alert alert-warning"><?=$data['exists']?></div>
+		<?php } ?>
 
     <div class="row">
       <div class="col-lg-12">
-        <form class="form-horizontal" action="/profile/add_client" method="post">
+        <form class="form-horizontal" action="<?php echo (isset($data['exists'])) ? '/profile/update_client' : '/profile/add_client'; ?>" method="post">
 			    <fieldset>
 					<div class="form-group">
 					    <label for="name" class="col-lg-2 control-label">Name</label>
 					    <div class="col-lg-10">
                         <?php if (isset($data['post_data'])) { ?>
 					        <input type="text" class="form-control" name="name" placeholder="Name" value="<?= $data['post_data']['name']?>" required>
+                        <?php } else if (isset($data['exists'])) { ?>
+                            <input type="text" class="form-control" name="name" placeholder="Name" readonly required>
                         <?php } else { ?>
                             <input type="text" class="form-control" name="name" placeholder="Name" required>
                         <?php } ?>
@@ -87,7 +92,7 @@
 					</div>
 					<div class="form-group">
 					  <div class="col-lg-10 col-lg-offset-2">
-						<button type="submit" class="btn btn-primary">Submit</button>
+						<button type="submit" class="btn btn-primary"> <?php echo (isset($data['exists'])) ? 'Update' : 'Submit'; ?> </button>
 					  </div>
 					</div>
 			    </fieldset>

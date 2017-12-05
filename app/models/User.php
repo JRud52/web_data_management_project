@@ -52,7 +52,7 @@ class User {
             $statement->bindValue(':username', $username);
             $statement->bindValue(':password_hash', $password);
             $statement->execute();
-            $_SESSION['username'] = $username;
+            return true;
         }
 	}
 

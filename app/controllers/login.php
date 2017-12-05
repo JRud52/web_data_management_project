@@ -86,8 +86,7 @@ class Login extends Controller {
             } else {
                 $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                 if ($user->register($username, $password)){
-                    $_SESSION['auth'] = true;
-                    $this->view('home/register');
+                    $this->view('home/register', ['success' => 'User was created']);
                 } else {
                     $message = "A user with that username already exists";
                     $this->view('home/register', ['message' => $message]);
