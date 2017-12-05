@@ -25,6 +25,7 @@ class Login extends Controller {
             if ($user->auth == TRUE) {
                 $_SESSION['auth'] = true;
                 $_SESSION['username'] = $_POST['username'];
+                $_SESSION['id'] = $user->get_id($_POST['username']);
                 $_SESSION['login_date'] = $logs->get_last_login($_POST['username']);
             }
             else {

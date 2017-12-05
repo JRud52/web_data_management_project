@@ -7,8 +7,30 @@ class Profile extends Controller {
     }
 
     public function add_client() {
+        $client = $this->model('Client');
 
+        //validate form
+        //dob, name is unique
 
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+            $message = '';
+
+            if (!preg_match("/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/", $_POST['phone_number'])){
+                $message = $message . 'Phone number is the wrong format. ';
+            }
+            if (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/",$_POST['birthdate'])) {
+                $message =  $message . 'Birthdate is the wrong format. ';
+            }
+            
+            if ($message == '') {
+                $client->add_client($_POST['name'], $_SESSION['id'], $_POST['birthdate'], $_POST['email'], $_POST['phone_number'], $_POST['province'], $_POST['city']);
+
+                $this->view('profile/add_client', ['success' => 'User Created']);
+            } else {
+                $this->view('profile/add_client', ['fail' => $message, 'post_data' => $_POST]);
+            }
+        }
 
         $this->view('profile/add_client');
     }
