@@ -4,10 +4,19 @@ Web Data Management Project - COSC 4806
 
 https://github.com/JRud52/web_data_management_project
 
-USE THIS LOGIN FOR EASY TESTING:
+USE THESE LOGINS FOR EASY TESTING:
 
-Username: Hello
-Password: World
+admin:
+Username: hello
+Password: world
+
+manager: 
+Username: testing
+Password: 123
+
+staff:
+Username: atari
+Password: 2600
 
 - [x] Assignment 1 (Basic login page)
 - [x] Assignment 2 (Session variables)
@@ -18,4 +27,5 @@ Password: World
 - [x] Assignment 7 (Public and private headers)
 - [x] Assignment 8 (ACLs)
 - [x] Assignment 9 (Public Profile)
-- [ ] Assignment 10
+- [x] Assignment 10 (Public API)
+- [x] Final Project

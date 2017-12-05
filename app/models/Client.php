@@ -18,4 +18,16 @@ class Client {
         $statement->bindValue(':city', $city);
         $statement->execute();
     }
+
+    public function name_exists($name){
+        $db = db_connect();
+        $statement = $db->prepare("SELECT COUNT(name) as names FROM name_list WHERE name=:name;");
+        $statement->bindValue(':name', $name);
+        $statement->execute();
+        $rows = $statement->fetch(PDO::FETCH_ASSOC);
+
+        $count = (int)$rows['names'];
+
+        return $count > 0;
+    }
 }

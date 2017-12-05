@@ -22,11 +22,14 @@ class Profile extends Controller {
             if (!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/",$_POST['birthdate'])) {
                 $message =  $message . 'Birthdate is the wrong format. ';
             }
+            if ($client->name_exists($_POST['name'])){
+                $message =  $message . 'Name already exists. ';
+            }
             
             if ($message == '') {
                 $client->add_client($_POST['name'], $_SESSION['id'], $_POST['birthdate'], $_POST['email'], $_POST['phone_number'], $_POST['province'], $_POST['city']);
 
-                $this->view('profile/add_client', ['success' => 'User Created']);
+                $this->view('profile/add_client', ['success' => 'Client Created']);
             } else {
                 $this->view('profile/add_client', ['fail' => $message, 'post_data' => $_POST]);
             }
