@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 03, 2017 at 10:33 PM
+-- Generation Time: Dec 05, 2017 at 04:32 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -278,7 +278,29 @@ INSERT INTO `activity_logs` (`date_time`, `username`, `is_login`, `address`, `su
 ('2017-11-28 06:09:43', 'hello', 1, '127.0.0.1', 1),
 ('2017-11-30 00:47:34', 'hello', 1, '127.0.0.1', 1),
 ('2017-12-02 21:34:41', 'hello', 1, '127.0.0.1', 1),
-('2017-12-03 19:51:48', 'hello', 1, '127.0.0.1', 1);
+('2017-12-03 19:51:48', 'hello', 1, '127.0.0.1', 1),
+('2017-12-04 00:20:59', 'hello', 0, '127.0.0.1', 1),
+('2017-12-04 00:21:00', 'hello', 0, '127.0.0.1', 1),
+('2017-12-04 00:21:03', 'hello', 1, '127.0.0.1', 1),
+('2017-12-04 04:30:57', 'hello', 1, '127.0.0.1', 1),
+('2017-12-04 04:54:03', 'hello', 0, '127.0.0.1', 1),
+('2017-12-04 04:54:08', 'hello', 1, '127.0.0.1', 1),
+('2017-12-04 05:45:07', 'hello', 1, '127.0.0.1', 1),
+('2017-12-04 21:42:11', 'hello', 1, '127.0.0.1', 1),
+('2017-12-04 22:56:21', 'hello', 0, '127.0.0.1', 1),
+('2017-12-04 22:56:22', 'hello', 0, '127.0.0.1', 1),
+('2017-12-04 22:56:25', 'hello', 1, '127.0.0.1', 1),
+('2017-12-04 22:57:46', 'hello', 0, '127.0.0.1', 1),
+('2017-12-04 22:57:49', 'hello', 1, '127.0.0.1', 1),
+('2017-12-04 23:03:12', 'hello', 0, '127.0.0.1', 1),
+('2017-12-04 23:03:16', 'hello', 1, '127.0.0.1', 1),
+('2017-12-04 23:07:38', 'hello', 0, '127.0.0.1', 1),
+('2017-12-04 23:07:41', 'hello', 1, '127.0.0.1', 1),
+('2017-12-05 02:41:04', 'asdfadsfadsffffff', 0, '127.0.0.1', 1),
+('2017-12-05 02:41:09', 'hello', 1, '127.0.0.1', 1),
+('2017-12-05 03:26:24', 'atari', 1, '127.0.0.1', 1),
+('2017-12-05 03:29:00', 'atari', 0, '127.0.0.1', 1),
+('2017-12-05 03:29:04', 'hello', 1, '127.0.0.1', 1);
 
 -- --------------------------------------------------------
 
@@ -346,6 +368,54 @@ INSERT INTO `lockout_times` (`date_time`, `address`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `managers`
+--
+
+CREATE TABLE `managers` (
+  `manager_id` int(11) NOT NULL,
+  `staff_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `managers`
+--
+
+INSERT INTO `managers` (`manager_id`, `staff_id`) VALUES
+(12, 1),
+(12, 2),
+(12, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `name_list`
+--
+
+CREATE TABLE `name_list` (
+  `name` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
+  `added_by` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `birthdate` date NOT NULL,
+  `email` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `phone_number` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `province` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `city` varchar(256) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `name_list`
+--
+
+INSERT INTO `name_list` (`name`, `added_by`, `birthdate`, `email`, `phone_number`, `province`, `city`) VALUES
+('asdfadsfadsfadsfa', '3', '2017-12-11', 'adsfasdf@algomau.ca', '123-123-1234', 'Ontario', 'Sault Ste Marie'),
+('dfasdfadsf', '4', '0000-00-00', 'asdfasfas@algomau.ca', 'asdf', 'Ontario', 'Sault Ste Marie'),
+('querty', '3', '1234-12-12', 'asdfasfas@algomau.ca', '123-123-1234', 'Manitoba', 'Sault Ste Marie'),
+('qwerty', '4', '1234-12-12', 'aasdfewrqw@algomau.ca', '123-123-1234', 'Prince Edward Island', 'Sault Ste Marie'),
+('sdfadsfadsfadsfa', '3', '2934-12-23', 'fadsfadsfa@algomau.ca', '1234567890', 'Ontario', 'Sault Ste Marie'),
+('test', '4', '1324-12-12', 'test@algomau.ca', '123-123-1234', 'New Brunswick', 'Sault Ste Marie');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `personal_details`
 --
 
@@ -363,8 +433,116 @@ CREATE TABLE `personal_details` (
 --
 
 INSERT INTO `personal_details` (`username`, `birthdate`, `phone_number`, `first_name`, `last_name`, `email`) VALUES
+('atari', '2017-12-15', '1234513242134', 'Atari', '2600', 'asdfads@asdfa.sadf'),
 ('hello', '2017-12-12', '7322374859', 'hello', 'world', 'hello@world.com'),
-('testing', '2017-12-16', '4749585748', 'Some', 'Guy', 'some@guy.com');
+('testing', '2017-12-16', '4749585748', 'Testing', '123', 'some@guy.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `province_city`
+--
+
+CREATE TABLE `province_city` (
+  `province` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `city` varchar(128) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `province_city`
+--
+
+INSERT INTO `province_city` (`province`, `city`) VALUES
+('British Columbia', 'Abbotsford'),
+('Prince Edward Island', 'Alberton'),
+('Nova Scotia', 'Amherst'),
+('New Brunswick', 'Bathurst'),
+('Manitoba', 'Brandon'),
+('British Columbia', 'Burnaby'),
+('Alberta', 'Calgary'),
+('New Brunswick', 'Campbellton'),
+('Newfoundland', 'Carbonear'),
+('Prince Edward Island', 'Charlottetown'),
+('Manitoba', 'Churchill'),
+('Newfoundland', 'Corner Brook'),
+('Prince Edward Island', 'Cornwall'),
+('Nova Scotia', 'Dartmouth'),
+('Newfoundland', 'Deer Lake'),
+('New Brunswick', 'Dieppe'),
+('Nova Scotia', 'Digby'),
+('Alberta', 'Edmonton'),
+('Manitoba', 'Elkhorn'),
+('Manitoba', 'Flin Flon'),
+('Alberta', 'Fort McMurray'),
+('New Brunswick', 'Fredricton'),
+('Prince Edward Island', 'Georgetown'),
+('Alberta', 'Grande Prairie'),
+('Ontario', 'Guelph'),
+('Nova Scotia', 'Halifax'),
+('Ontario', 'Hamilton'),
+('Newfoundland', 'Harbour Grace'),
+('British Columbia', 'Kamloops'),
+('British Columbia', 'Kelowna'),
+('Prince Edward Island', 'Kensington'),
+('Ontario', 'Kingston'),
+('Alberta', 'Leduc'),
+('Alberta', 'Lethbridge'),
+('Saskatchewan', 'Lloydminster'),
+('Ontario', 'London'),
+('Nova Scotia', 'Lunenburg'),
+('Alberta', 'Medicine Hat'),
+('New Brunswick', 'Miramichi'),
+('New Brunswick', 'Moncton'),
+('Prince Edward Island', 'Montague'),
+('Saskatchewan', 'Moose Jaw'),
+('Saskatchewan', 'Moosomin'),
+('Manitoba', 'Morden'),
+('Newfoundland', 'Mount Pearl'),
+('British Columbia', 'Naniamo'),
+('Nova Scotia', 'New Glasglow'),
+('Saskatchewan', 'Nipowin'),
+('Saskatchewan', 'North Battleford'),
+('Newfoundland', 'Placentia'),
+('Saskatchewan', 'Prince Albert'),
+('British Columbia', 'Prince George'),
+('Alberta', 'Red Deer'),
+('Saskatchewan', 'Regina'),
+('British Columbia', 'Richmond'),
+('Manitoba', 'Roblin'),
+('Prince Edward Island', 'Rustico'),
+('New Brunswick', 'Sackville'),
+('New Brunswick', 'Saint John'),
+('Saskatchewan', 'Saskatoon'),
+('Ontario', 'Sault Ste. Marie'),
+('Manitoba', 'Selkirk'),
+('New Brunswick', 'Shediac'),
+('Prince Edward Island', 'Souris'),
+('Alberta', 'Spruce Grove'),
+('Alberta', 'St. Albert'),
+('Newfoundland', 'St. John\'s'),
+('Manitoba', 'Steinbach'),
+('Newfoundland', 'Stephenville'),
+('Prince Edward Island', 'Stratford'),
+('Ontario', 'Sudbury'),
+('Prince Edward Island', 'Summerside'),
+('British Columbia', 'Surrey'),
+('New Brunswick', 'Sussex'),
+('Nova Scotia', 'Sydney'),
+('Ontario', 'Thunder Bay'),
+('Newfoundland', 'Torbay'),
+('Ontario', 'Toronto'),
+('Nova Scotia', 'Truro'),
+('Newfoundland', 'Twillingate'),
+('British Columbia', 'Vancouver'),
+('British Columbia', 'Victoria'),
+('Saskatchewan', 'Watrous'),
+('Ontario', 'Wawa'),
+('Ontario', 'Windsor'),
+('Manitoba', 'Winkler'),
+('Manitoba', 'Winnipeg'),
+('Nova Scotia', 'Wolfville'),
+('Nova Scotia', 'Yarmouth'),
+('Saskatchewan', 'Yorkton');
 
 -- --------------------------------------------------------
 
@@ -398,6 +576,7 @@ INSERT INTO `reminders` (`id`, `subject`, `description`, `created`, `username`, 
 --
 
 CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
   `username` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
   `password_hash` varchar(128) COLLATE utf8_unicode_ci NOT NULL,
   `acl` int(11) NOT NULL DEFAULT '1'
@@ -407,19 +586,23 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`username`, `password_hash`, `acl`) VALUES
-('12345HelloWorld!@#', '$2y$10$eu9t.WrF.OnF5X.0glDISetp30zRVm6HUwz5MN9hvWHovhutHPvAi', 1),
-('asdfadsfa', '$2y$10$de3cCu0qVZ.9AloEGnFcO.I/IaBwDkrRR1umB4KyQCB.S2x4uUvEG', 1),
-('atari', '$2y$10$zi4lTYW.CPho7ZXLalKoOuzrECRgL/7rGyuQTej70SvGA2AG1CCPG', 1),
-('hello', '$2y$10$QGlngYufoJsIlReWTPSkOOO.QihQwRFwkSXZihe5zjlLqZ1t0Tuw2', 3),
-('name', '$2y$10$VNn9cRy5khTRD69035/.5eMSCqpu3SFv74B8HGlEqriV/pR0qvmNu', 1),
-('new_user', '$2y$10$EfFHS9ssZ.gN8JxOGml2Cea9NsJiVqRXgJQkt8tdMJhONFjquK8z6', 1),
-('new_user2', '$2y$10$PpKFc83c5NIpq.wT.aJskuONPcFJvL8U0YllyOF2hpQ1IAUlAWrW2', 1),
-('new_user3', '$2y$10$60uAxhI5DRQLqVxfoMKz8.f0PgiSEIRfYnJtd2yxFYebuSpUoES8S', 1),
-('pass_check_test', '$2y$10$LVP88mwHgS0MFjaeRbtrvuYQ0DJMioeuKd0doykupG2QxON.NtWeW', 1),
-('some', '$2y$10$tZu/.8M42VPhZwpOxcRhsu9k/KvzlMxaZaD44vcfbda8xZzGJ5F5K', 1),
-('test', '$2y$10$FV46AFM4dF8Xy33VntfTn.NOQ0Da2BBr0UWHPRZKEF0XdLe6saB3y', 1),
-('testing', '$2y$10$wQ6GAewf4HK9ea4QyN6B9.z.CQlxjQdwZQMSiHcMjixXBr11GT7AW', 2);
+INSERT INTO `users` (`id`, `username`, `password_hash`, `acl`) VALUES
+(1, '12345HelloWorld!@#', '$2y$10$eu9t.WrF.OnF5X.0glDISetp30zRVm6HUwz5MN9hvWHovhutHPvAi', 1),
+(2, 'asdfadsfa', '$2y$10$de3cCu0qVZ.9AloEGnFcO.I/IaBwDkrRR1umB4KyQCB.S2x4uUvEG', 1),
+(3, 'atari', '$2y$10$zi4lTYW.CPho7ZXLalKoOuzrECRgL/7rGyuQTej70SvGA2AG1CCPG', 1),
+(4, 'hello', '$2y$10$QGlngYufoJsIlReWTPSkOOO.QihQwRFwkSXZihe5zjlLqZ1t0Tuw2', 3),
+(5, 'name', '$2y$10$VNn9cRy5khTRD69035/.5eMSCqpu3SFv74B8HGlEqriV/pR0qvmNu', 1),
+(6, 'new_user', '$2y$10$EfFHS9ssZ.gN8JxOGml2Cea9NsJiVqRXgJQkt8tdMJhONFjquK8z6', 1),
+(7, 'new_user2', '$2y$10$PpKFc83c5NIpq.wT.aJskuONPcFJvL8U0YllyOF2hpQ1IAUlAWrW2', 1),
+(8, 'new_user3', '$2y$10$60uAxhI5DRQLqVxfoMKz8.f0PgiSEIRfYnJtd2yxFYebuSpUoES8S', 1),
+(9, 'pass_check_test', '$2y$10$LVP88mwHgS0MFjaeRbtrvuYQ0DJMioeuKd0doykupG2QxON.NtWeW', 1),
+(10, 'some', '$2y$10$tZu/.8M42VPhZwpOxcRhsu9k/KvzlMxaZaD44vcfbda8xZzGJ5F5K', 1),
+(11, 'test', '$2y$10$FV46AFM4dF8Xy33VntfTn.NOQ0Da2BBr0UWHPRZKEF0XdLe6saB3y', 1),
+(12, 'testing', '$2y$10$wQ6GAewf4HK9ea4QyN6B9.z.CQlxjQdwZQMSiHcMjixXBr11GT7AW', 2),
+(13, 'some_guy', '$2y$10$Mh54saeXpXBLu5b4W15wCe/CPTh82PDq/C2DHSFYsE/ERY.eO91pK', 1),
+(14, 'asdfalksdjflkajdsfjasdjfalsjdflkajdslfkasd', '$2y$10$NTMpyaK3X/ku1LD9fKSC6OvvmPZNgWBVrhdk6YyNRCFP3y5zGUI9e', 1),
+(15, 'fffffffffffffffffffffff', '$2y$10$xAo5BPCZQWYPWQY9Josvj.CxKj/r3Fmll1x/0RqG1CQROTADIeiL.', 1),
+(16, 'asdfadsfadsffffff', '$2y$10$IuNlS.d7DJEecFPnMgCOEe9aXO.XtQgQAF6GGQsi2xhwDuhnRWkGS', 1);
 
 --
 -- Indexes for dumped tables
@@ -432,10 +615,22 @@ ALTER TABLE `activity_logs`
   ADD PRIMARY KEY (`date_time`);
 
 --
+-- Indexes for table `name_list`
+--
+ALTER TABLE `name_list`
+  ADD UNIQUE KEY `name` (`name`);
+
+--
 -- Indexes for table `personal_details`
 --
 ALTER TABLE `personal_details`
   ADD PRIMARY KEY (`username`);
+
+--
+-- Indexes for table `province_city`
+--
+ALTER TABLE `province_city`
+  ADD UNIQUE KEY `city` (`city`);
 
 --
 -- Indexes for table `reminders`
@@ -447,7 +642,9 @@ ALTER TABLE `reminders`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`username`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -458,6 +655,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `reminders`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
