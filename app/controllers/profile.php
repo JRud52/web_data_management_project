@@ -50,9 +50,13 @@ class Profile extends Controller {
             }
             
             if ($message == '') {
-                $client->update_client($_POST['name'], $_SESSION['id'], $_POST['birthdate'], $_POST['email'], $_POST['phone_number'], $_POST['province'], $_POST['city']);
+                if ($_SESSION['acl'] == 1 && $client->get_client($_POST['name'])['added_by'] == $_SESSION['id']) {
+                    $client->update_client($_POST['name'], $_SESSION['id'], $_POST['birthdate'], $_POST['email'], $_POST['phone_number'], $_POST['province'], $_POST['city']);
 
-                $this->view('profile/add_client', ['success' => 'Client Updated']);
+                    $this->view('profile/add_client', ['success' => 'Client Updated']);
+                } else {
+                    $this->view('profile/add_client', ['post_data' => $_POST, 'exists' => 'You do not have access to this client. Please contact the manager: ' . $client->get_manager($_SESSION['id'])]);
+                }
             } else {
                 $this->view('profile/add_client', ['fail' => $message, 'post_data' => $_POST]);
             }

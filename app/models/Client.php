@@ -53,4 +53,14 @@ class Client {
 
         return $rows;
     }
+
+    public function get_manager($id){
+        $db = db_connect();
+        $statement = $db->prepare("SELECT personal_details.first_name, personal_details.last_name FROM managers, users, personal_details WHERE managers.manager_id=users.id AND users.username=personal_details.username AND managers.staff_id = :id");
+        $statement->bindValue(':id', $id);
+        $statement->execute();
+        $rows = $statement->fetch(PDO::FETCH_ASSOC);
+
+        return $rows['first_name'] . ' ' . $rows['last_name'];
+    }
 }
